@@ -1,1 +1,7 @@
-<p>hero-list works!</p>
+<table mat-table [dataSource]="heroes">
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let hero; columns: columnsToDisplay"></tr>
+
+  <mat-text-column name="id"></mat-text-column>
+  <mat-text-column name="name"></mat-text-column>
+</table>

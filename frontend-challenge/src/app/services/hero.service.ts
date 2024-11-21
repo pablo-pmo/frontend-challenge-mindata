@@ -5,7 +5,10 @@ import { Hero } from '../models/hero';
   providedIn: 'root',
 })
 export class HeroService {
-  private heroes: Hero[] = [];
+  private heroes: Hero[] = [
+    { id: 1, name: 'batman' },
+    { id: 2, name: 'spiderman' },
+  ];
 
   constructor() {}
 
