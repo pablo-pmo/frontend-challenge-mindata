@@ -8,10 +8,10 @@ export class HeroService {
   private heroes: Hero[] = [
     { id: 1, name: 'batman' },
     { id: 2, name: 'spiderman' },
-    { id: 1, name: 'batman' },
-    { id: 2, name: 'spiderman' },
-    { id: 1, name: 'batman' },
-    { id: 2, name: 'spiderman' },
+    { id: 3, name: 'antman' },
+    { id: 4, name: 'hulk' },
+    { id: 5, name: 'thor' },
+    { id: 6, name: 'ironman' },
   ];
 
   constructor() {}
