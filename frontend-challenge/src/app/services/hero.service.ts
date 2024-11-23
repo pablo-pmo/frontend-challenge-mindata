@@ -6,18 +6,18 @@ import { Hero } from '../models/hero';
 })
 export class HeroService {
   private heroes: Hero[] = [
-    { id: 1, name: 'batman' },
-    { id: 2, name: 'spiderman' },
-    { id: 3, name: 'antman' },
-    { id: 4, name: 'hulk' },
-    { id: 5, name: 'thor' },
-    { id: 6, name: 'ironman' },
+    // { id: 1, name: 'batman' },
+    // { id: 2, name: 'spiderman' },
+    // { id: 3, name: 'antman' },
+    // { id: 4, name: 'hulk' },
+    // { id: 5, name: 'thor' },
+    // { id: 6, name: 'ironman' },
   ];
 
   constructor() {}
 
-  addHero(hero: Hero): void {
-    this.heroes.push(hero);
+  addHero(name: string): void {
+    this.heroes.push({ name, id: this.getNextId() });
   }
 
   getHeroes(): Hero[] {
@@ -48,5 +48,10 @@ export class HeroService {
     );
     if (index === -1) return;
     this.heroes.splice(index, 1);
+  }
+
+  getNextId(): number {
+    if (this.heroes.length === 0) return 1;
+    return this.heroes.slice(-1)[0].id + 1;
   }
 }
