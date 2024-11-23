@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 import { HeroService } from '../../services/hero.service';
 import { Hero } from '../../models/hero';
 
@@ -29,7 +30,7 @@ export class HeroListComponent implements AfterViewInit {
   public columnsToDisplay: string[] = ['id', 'name'];
   public dataSource: MatTableDataSource<Hero>;
 
-  constructor(private heroService: HeroService) {
+  constructor(private router: Router, private heroService: HeroService) {
     this.dataSource = new MatTableDataSource(this.heroService.getHeroes());
   }
 
@@ -37,8 +38,12 @@ export class HeroListComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  applyFilter(event: KeyboardEvent) {
+  applyFilter(event: KeyboardEvent): void {
     const filterText: string = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterText.trim();
+  }
+
+  navigateAddHero(): void {
+    this.router.navigate(['heroes', 'add', this.heroService.getNextId()]);
   }
 }
