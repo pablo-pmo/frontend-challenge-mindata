@@ -3,6 +3,9 @@ import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { HeroService } from '../../services/hero.service';
 import { Hero } from '../../models/hero';
 
@@ -13,6 +16,9 @@ import { Hero } from '../../models/hero';
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   templateUrl: './hero-list.component.html',
   styleUrl: './hero-list.component.scss',
